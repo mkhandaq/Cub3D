@@ -9,7 +9,7 @@ LIBFT = $(LIBFTPATH)/libft.a
 
 
 SRCS = main.c map_validation.c set_map.c get_next_line/get_next_line.c \
-	get_next_line/get_next_line_utils.c
+	find_map.c
 OBJS = $(SRCS:.c=.o)
 
 HEADERS = cub.h

@@ -2,7 +2,8 @@
 
 int main (int argc, char **argv)
 {
-	int	fd;
+	int		fd;
+	char	**map;
 	if (argc != 2)
 		return 1;
 	if (ft_strlen(argv[1]) <= 4 ||
@@ -17,6 +18,10 @@ int main (int argc, char **argv)
 		printf("Error: Could not open file\n");
 		return 1;
 	}
+	map = set_map(fd, argv[1]);
+	if (!map)
+		return 1;
+	//print_map(map);
 	close(fd);
 	printf("File opened successfully\n");
 	return 0;
