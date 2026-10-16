@@ -1,6 +1,6 @@
 #include "cub.h"
 
-static int is_valid_char(char c)
+int is_valid_char(char c)
 {
 	return (c == '0' || c == '1' || c == ' ' ||
 			c == 'N' || c == 'S' || c == 'E' || c == 'W');
@@ -44,3 +44,4 @@ int	find_map(char **map, int *i)
 	}
 	return (1);
 }
+

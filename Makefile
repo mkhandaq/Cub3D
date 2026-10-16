@@ -9,7 +9,8 @@ LIBFT = $(LIBFTPATH)/libft.a
 
 
 SRCS = main.c map_validation.c set_map.c get_next_line/get_next_line.c \
-	find_map.c
+	find_map.c find_elements.c flood_fill.c parser.c parser_utils.c \
+	parser_color.c
 OBJS = $(SRCS:.c=.o)
 
 HEADERS = cub.h

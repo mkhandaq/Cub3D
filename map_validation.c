@@ -9,18 +9,20 @@ int check_map_chars(char **map_line, t_map *map)
 	while (i < map->height)
 	{
 		j = 0;
-		while (j < map->width)
+		while (j < map->width && map_line[i][j])
         {
 			if (!is_valid_char(map_line[i][j]))
 				return (0);
 			j++;
 		}
+		if (j != map->width)
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	find_spawn(char **map_line, t_player *player)
+int	find_spawn(char **map_line, t_map map, t_player *player)
 {
 	int	i;
 	int	j;
@@ -31,7 +33,7 @@ int	find_spawn(char **map_line, t_player *player)
 	while(map_line[i])
 	{
         j = 0;
-        while (j < map->width)
+	while (j < map->width && map_line[i][j])
         {
 			if (map_line[i][j] == 'N' || map_line[i][j] == 'S'
 				|| map_line[i][j] == 'E' || map_line[i][j] == 'W')
